@@ -10,6 +10,9 @@ class CartItem extends React.Component {
             img: ''
         }
     }
+    increseQuantity = () => {
+        console.log('this.state', this.state);
+    }
     render(){
         const { price,title, qty}=this.state;
         return(
@@ -31,9 +34,15 @@ class CartItem extends React.Component {
                         <div className="cart-item-actions">
                             {/*Brackets
                             */}
-                            <img alt="increase"  className="action-icons" src="https://as1.ftcdn.net/jpg/02/01/58/70/500_F_201587024_jEB8rsvrFtd0jwBF2A7oUnZ2KGYYddmC.jpg" />
+                            <img alt="increase"  className="action-icons" src="https://as1.ftcdn.net/jpg/02/01/58/70/500_F_201587024_jEB8rsvrFtd0jwBF2A7oUnZ2KGYYddmC.jpg" 
+                            // onClick={this.increseQuantity.bind(this)}
+                            onClick={this.increseQuantity}
+                            /> 
+
                             <img alt="decrease"  className="action-icons" src="https://as2.ftcdn.net/jpg/02/78/84/57/500_F_278845758_9xl3srVgd8p4jquxgxugGaHV1e5EOlLO.jpg" />
-                            <img alt="delete"  className="action-icons" src="https://as2.ftcdn.net/jpg/03/28/80/75/500_F_328807573_grRnLlIgRR8wQMXtLDdNQSwQepRK0aFX.jpg" />
+
+                            <img alt="delete"  
+                            className="action-icons" src="https://as2.ftcdn.net/jpg/03/28/80/75/500_F_328807573_grRnLlIgRR8wQMXtLDdNQSwQepRK0aFX.jpg" />
 
                         </div>
 
