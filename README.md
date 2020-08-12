@@ -1,1 +1,2 @@
-A small Project on React 
+React Project 
+Cart Item Project(like Online Shoping)
