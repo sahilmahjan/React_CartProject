@@ -9,7 +9,10 @@ class CartItem extends React.Component {
             qty: 1,
             img: ''
         }
-    }
+    // or
+        // this.increseQuantity=this.increseQuantity.bind(this);
+        }
+    // applied
     increseQuantity = () => {
         console.log('this.state', this.state);
     }
@@ -34,15 +37,18 @@ class CartItem extends React.Component {
                         <div className="cart-item-actions">
                             {/*Brackets
                             */}
-                            <img alt="increase"  className="action-icons" src="https://as1.ftcdn.net/jpg/02/01/58/70/500_F_201587024_jEB8rsvrFtd0jwBF2A7oUnZ2KGYYddmC.jpg" 
+                            <img alt="increase"  className="action-icons" src="https://image.flaticon.com/icons/svg/1665/1665578.svg" 
+                            
+                            // or
+
                             // onClick={this.increseQuantity.bind(this)}
                             onClick={this.increseQuantity}
                             /> 
 
-                            <img alt="decrease"  className="action-icons" src="https://as2.ftcdn.net/jpg/02/78/84/57/500_F_278845758_9xl3srVgd8p4jquxgxugGaHV1e5EOlLO.jpg" />
+                            <img alt="decrease"  className="action-icons" src="https://image.flaticon.com/icons/svg/992/992683.svg" />
 
                             <img alt="delete"  
-                            className="action-icons" src="https://as2.ftcdn.net/jpg/03/28/80/75/500_F_328807573_grRnLlIgRR8wQMXtLDdNQSwQepRK0aFX.jpg" />
+                            className="action-icons" src="https://image.flaticon.com/icons/svg/1345/1345874.svg" />
 
                         </div>
 
