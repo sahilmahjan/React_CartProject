@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CartItem extends React.Component {
+const CartItem=(props) =>  {
     // // using this in cart because items are added
     // // constructor(){
     // //     super();
@@ -41,7 +41,7 @@ class CartItem extends React.Component {
     //         return{
     //             qty: prevState.qty+1
     //         }
-            
+
     //     },
     //     // for console purpose
     //     //  () =>
@@ -49,7 +49,7 @@ class CartItem extends React.Component {
     //     //     console.log('this.state', this.state);
     //     // }
     //     );
-        
+
     // }
 
     // decreseQuantity = () => {
@@ -73,63 +73,64 @@ class CartItem extends React.Component {
     //         return{
     //             qty: prevState.qty-1
     //         }
-            
+
     //     });
     // }
 
-    
-    render(){
-        console.log('this.props', this.props);
-        const { price,title, qty}=this.props.product;
-        const {product, 
-            onIncreaseQuantity, 
-            onDecreaseQuantity, 
-            onhandleDeleteProduct }=this.props;
-        return(
-            <div className="cart-item">
-                {this.props.jsx}
-                <div className="left-block">
-                    <img style={styles.image}/>
-                </div>
-                <div className="right-block">
-                    <div>
-                        <div style={{fontSize:25}}>
-                            {title}
-                        </div>
-                        <div style={{color:'#777'}}>
+
+
+    // console.log('this.props', this.props);
+
+    const { price, title, qty } = props.product;
+    const { product,
+        onIncreaseQuantity,
+        onDecreaseQuantity,
+        onhandleDeleteProduct } = props;
+    return (
+        <div className="cart-item">
+            {/* {this.props.jsx} */}
+            <div className="left-block">
+                <img style={styles.image}  src={product.img} />
+            </div>
+            <div className="right-block">
+                <div>
+                    <div style={{ fontSize: 25 }}>
+                        {title}
+                    </div>
+                    <div style={{ color: '#777' }}>
                         Rs. {price}/-
                         </div>
-                        <div style={{color:'#777'}}>
+                    <div style={{ color: '#777' }}>
                         Qty: {qty}
-                        </div>
-                        <div className="cart-item-actions">
-                            {/*Buttons
+                    </div>
+                    <div className="cart-item-actions">
+                        {/*Buttons
                             */}
-                            <img alt="increase"  className="action-icons" src="https://image.flaticon.com/icons/svg/1665/1665578.svg" 
-                            
+                        <img alt="increase" className="action-icons" src="https://image.flaticon.com/icons/svg/1665/1665578.svg"
+
                             // or
 
                             // onClick={this.increseQuantity.bind(this)}
-                            onClick={  () =>  onIncreaseQuantity(product) }
-                            /> 
+                            onClick={() => onIncreaseQuantity(product)}
+                        />
 
-                            <img alt="decrease"  className="action-icons" src="https://image.flaticon.com/icons/svg/992/992683.svg" 
-                            onClick={  () =>  onDecreaseQuantity(product) }
-                            />
+                        <img alt="decrease" className="action-icons" src="https://image.flaticon.com/icons/svg/992/992683.svg"
+                            onClick={() => onDecreaseQuantity(product)}
+                        />
 
-                            <img alt="delete"  
-                            className="action-icons" src="https://image.flaticon.com/icons/svg/1345/1345874.svg" 
-                            onClick={  () =>  onhandleDeleteProduct(product.id) }
-                            />
-
-                        </div>
-
+                        <img alt="delete"
+                            className="action-icons" src="https://image.flaticon.com/icons/svg/1345/1345874.svg"
+                            onClick={() => onhandleDeleteProduct(product.id)}
+                        />
 
                     </div>
+
+
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
+    
 }
 const styles={
     image:{
